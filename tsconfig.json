@@ -1,0 +1,65 @@
+{
+  "experimentalDecorators": true,
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "declaration": false,
+    "allowJs": false,
+    "allowUnreachableCode": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "removeComments": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noLib": false,
+    "jsx": "react",
+    "outDir": "ts_processed",
+    "lib": [
+      "es2015"
+      , "dom"
+    ],
+    "rootDirs": [
+      "src"
+      , "webpack-ts"
+      , "storybook-ts"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+      , "lodash/*": ["node_modules/@types/lodash-es/*"]
+      , "react-icons/lib/*": ["node_modules/@types/react-icons/*"]
+    }
+  },
+  "filesGlob": [
+    "src/*.ts",
+    "src/*.tsx",
+    "webpack-ts/*.ts",
+    "webpack-ts/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "custom_typings/**/*.d.ts",
+    "typings/**/*.d.ts",
+    "node_modules/@types/**/*.d.ts",
+    "node_modules/rxjs/*.d.ts",
+    "node_modules/rxjs/**/*.d.ts",
+    "!./node_modules/@types/recompose/node_modules/**/*.d.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "exclude": [
+    "webpack",
+    "node_modules",
+    "!node_modules/@types",
+    "!node_modules/@kadira/storybook/config",
+    "node_modules/rxjs/**/*.js",
+    "node_modules/@types/recompose/node_modules/**/*.d.ts",
+    "ts_processed", "webpack_ts_processed",
+    ".storybook",
+    "webpack/*.js",
+    "dist",
+    "webpack-dev-server.js"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
