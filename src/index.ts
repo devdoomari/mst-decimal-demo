@@ -12,8 +12,18 @@ export type WalletType = {
 
 export const Wallet = types.model<WalletType>('wallet', {
   balance: DecimalPrimitive,
+})
+.actions(self => ({
+  set(args: {
+    balance: Decimal,
+  }) {
+    self.balance = args.balance;
+  }
+}))
+;
+
+const wallet1 = Wallet.create({
+  balance: new Decimal(1).toString(),
 });
 
-Wallet.create({
-  balance: new Decimal(1),
-});
+wallet1.set({ balance: new Decimal(3) })

@@ -1,9 +1,10 @@
 import {
   types,
 } from 'mobx-state-tree';
+import Decimal from 'decimal.js';
 
 export const DecimalPrimitive = types.reference(
-  types.frozen as any,
+  types.string as any,
   {
     get(value: string | number) {
       console.error(`
